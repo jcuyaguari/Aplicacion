@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SimonBank</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list-header lines="inset">
+        <ion-label>TRANSFERENCIAS</ion-label>
+      </ion-list-header>
+    </ion-card-content>
+  </ion-card>
+
+<ion-card-content class="card">
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">Cuenta Origen<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="transferencia.origen"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Cuenta destino</ion-label>
+      <ion-input [(ngModel)]="transferencia.destino"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Monto</ion-label>
+      <ion-input [(ngModel)]="transferencia.setMonto"></ion-input>
+    </ion-item>
+        
+    <ion-item>
+      <ion-label position="stacked">Concepto</ion-label>
+      <ion-input [(ngModel)]="transferencia.setConcepto"></ion-input>
+    </ion-item>
+
+  </ion-list>
+     
+  <div class="ion-padding">
+    <ion-button expand="block" type="submit" (click)="realizarTransferencia()">Transferir</ion-button>
+  </div>
+</ion-card-content>
+</ion-content>

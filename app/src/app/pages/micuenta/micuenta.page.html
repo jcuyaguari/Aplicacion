@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-card>
+      <ion-card-content>
+        <ion-list-header lines="inset">
+          <ion-label>Saldo de los creditos</ion-label>
+        </ion-list-header>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item *ngFor="let c of cuentas | async">
+          <!-- <ion-avatar slot="start">
+            <img src="./assets/logo.PNG">
+          </ion-avatar> -->
+          <ion-label>
+            <ion-item>
+              <ion-label class="label">Nombre: {{c.cuenta.cliente.nombres}} {{c.cuenta.cliente.apellido}} </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="label">Cuenta: {{c.cuenta.numero}} </ion-label>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-label class="label">Cedula: {{c.cedula}} </ion-label>
+            </ion-item> -->
+            <ion-item>
+              <ion-label class="label">Estado: {{c.estado}} </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="label">Proposito: {{c.proposito}} </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="label">Cantidad: {{c.cantidad}} </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="label">Saldo Cuen: {{c.cuenta.saldo}} </ion-label>
+            </ion-item>
+                    
+          </ion-label>
+        </ion-item>
+
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
